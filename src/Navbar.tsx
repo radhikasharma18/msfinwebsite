@@ -3,14 +3,14 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className="flex justify-between p-2">
+    <><div className="flex justify-between p-2">
       {/* Left - Logo */}
       <div className="p-2 w-[25%]">
         <img src={logo} alt="MSFIN Logo" className="h-12" />
       </div>
 
       {/* Center - Navigation Links */}
-      <div className="text-2xl flex items-end  gap-4 w-[50%]">
+      <div className="text-2xl md:flex items-end  gap-4 w-[50%] hidden ">
         <NavLink
           to="/"
           className="hover:underline hover:bg-red-100 hover:rounded-full p-2 hover:text-red-500"
@@ -53,6 +53,7 @@ const Navbar = () => {
         </button>
       </div>
     </div>
+    </>
   );
 };
 
