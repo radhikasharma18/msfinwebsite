@@ -4,6 +4,7 @@ import { TfiLocationPin } from "react-icons/tfi";
 import { FaPhone } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa6";
 import { TfiInfoAlt } from "react-icons/tfi";
+import { motion as Motion } from "framer-motion";
 
 const Contactus = () => {
   return (
@@ -25,7 +26,13 @@ const Contactus = () => {
                 <div className="size-10 rounded-full bg-blue-200 flex justify-center items-center p-2"> 
                     <p className=" text-blue-500 text-2xl"><TfiLocationPin /></p></div>
                 
-                <p className="md:text-3xl text-2xl font-bold font-playfair  text-blue-900">Our Location</p>
+                <Motion.div 
+                 initial={{ opacity: 0, }}   
+      animate={{ opacity: 1, y: 0 }}      
+      whileInView={{ opacity: 1, y: 0 }}           
+      transition={{ duration: 4, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.3 }}    
+                className="md:text-3xl text-2xl font-bold font-playfair  text-blue-900">Our Location</Motion.div>
             </div>
              
      <div className="md:h-7/8 h-full" >
@@ -45,7 +52,13 @@ const Contactus = () => {
                 <div className="size-10 rounded-full bg-red-200 flex justify-center items-center p-2"> 
                     <p className=" text-red-900 text-2xl"><TfiInfoAlt/></p></div>
                 
-                <p className="md:text-3xl text-2xl font-bold font-playfair  text-red-900">Our Information </p>
+                <Motion.div
+                 initial={{ opacity: 0, }}   
+      animate={{ opacity: 1, y: 0 }}      
+      whileInView={{ opacity: 1, y: 0 }}           
+      transition={{ duration: 4, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.3 }}  
+                 className="md:text-3xl text-2xl font-bold font-playfair  text-red-900">Our Information </Motion.div>
             </div>
    
     <div className='flex flex-col gap-4 justify-between'>

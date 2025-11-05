@@ -5,12 +5,12 @@ const Navbar = () => {
   return (
     <><div className="flex justify-between p-2">
       {/* Left - Logo */}
-      <div className="p-2 w-[25%]">
+      <div className="p-2 w-[20%]">
         <img src={logo} alt="MSFIN Logo" className="h-12" />
       </div>
 
       {/* Center - Navigation Links */}
-      <div className="text-2xl md:flex items-end  gap-4 w-[50%] hidden ">
+      <div className="text-2xl md:flex items-end justify-center gap-4 w-[55%] hidden ">
         <NavLink
           to="/"
           className="hover:underline hover:bg-red-100 hover:rounded-full p-2 hover:text-red-500"
@@ -29,12 +29,7 @@ const Navbar = () => {
         >
           Services
         </NavLink>
-        <NavLink
-          to="/careers"
-          className="hover:underline hover:bg-red-100 hover:rounded-full p-2"
-        >
-          Careers
-        </NavLink>
+      
         <NavLink
           to="/contactus"
           className="hover:underline hover:bg-red-100 hover:rounded-full p-2"
