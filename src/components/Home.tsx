@@ -2,68 +2,168 @@ import Card from "../card/Card";
 import { SiTransmission } from "react-icons/si";
 import { IoLogoXing } from "react-icons/io";
 import Services from "./Services";
-import { WavyBackground } from "./Wavy-background";
+import CustomerRev from "../card/CustomerRev";
+import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { useEffect, useState } from "react";
+import Svg from "./Svg";
 
-// const WavyBackground = ({ children, className }: any) => {
-//   return (
-//     <div
-//       className={className}
-//       style={{ position: "relative", overflow: "hidden" }}
-//     >
-//       <svg
-//         viewBox="0 0 1440 320"
-//         preserveAspectRatio="none"
-//         style={{
-//           position: "absolute",
-//           left: 0,
-//           top: 0,
-//           width: "100%",
-//           height: "100%",
-//           zIndex: -1,
-//         }}
-//       >
-//         <path
-//           fill="#e11d48"
-//           fillOpacity="1"
-//           d="M0,160L48,165.3C96,171,192,181,288,176C384,171,480,149,576,144C672,139,768,149,864,160C960,171,1056,181,1152,176C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-//         ></path>
-//       </svg>
-//       <div style={{ position: "relative", zIndex: 1 }}>{children}</div>
-//     </div>
-//   );
-// };
+
+
+
+const testimonials = [
+  {
+    star: "★★★★★",
+    name: "David Ali",
+    description:
+      "Sleekix has been an amazing investment partner for me. Their services are easy to use and accessible from any device.Sleekix has been an amazing investment partner for me. Their services are easy to use and accessible from aSleekix has been an amazing investment partner for me. Their services are easy to use and accessible from any device.ny device.",
+    designation: "Investor",
+  },
+  {
+    star: "★★★★★",
+    name: "Jack Frost",
+    description:
+      "The platform has been a game-changer for our business growth.",
+    designation: "Manager",
+  },
+  {
+    star: "★★★★★",
+    name: "Olivia Wattson",
+    description:
+      "Switching to Sleekix was one of our best decisions. Amazing support!",
+    designation: "Operations Head",
+  },  {
+    star: "★★★★★",
+    name: "David Ali",
+    description:
+      "Their services are easy to use and accessible from any device.",
+    designation: "Investor",
+  },
+  {
+    star: "★★★",
+    name: "Jack Frost",
+    description:
+      "The platform has been a game-changer..",
+    designation: "Manager",
+  },
+  {
+    star: "★★★★★",
+    name: "Olivia Wattson",
+    description:
+      "Switching to Sleekix was one of our best decisionsSwitching to Sleekix was one of our best decisions. Amazing support!. Amazing support!Switching to Sleekix was one of our best decisions. Amazing support!",
+    designation: "Operations Head",
+  },
+    {
+    star: "★★★★★",
+    name: "Jack Frost",
+    description:
+      "The platform has been a game-changer..",
+    designation: "Manager",
+  },
+  {
+    star: "★★★★★",
+    name: "Olivia Wattson",
+    description:
+      "Switching to Sleekix was one of our best decisionsSwitching to Sleekix was one of our best decisions. Amazing support!. Amazing support!Switching to Sleekix was one of our best decisions. Amazing support!",
+    designation: "Operations Head",
+  },
+    {
+    star: "★★★★",
+    name: "Olivia Wattson",
+    description:
+      "Switching to Sleekix was one of our best decisionsSwitching to Sleekix was one of our best decisions. Amazing support!. Amazing support!Switching to Sleekix was one of our best decisions. Amazing support!",
+    designation: "Operations Head",
+  }
+  ];
+
 
 const Home = () => {
+  const [displayCount, setDisplayCount] = useState(0);
+  const [customerCount, setCustomerCount] = useState(0);
+
+  const count1 = useMotionValue(0);
+  const count2 = useMotionValue(0);
+
+  const rounded1 = useTransform(count1, (latest) => latest.toFixed(0));
+  const rounded2 = useTransform(count2, (latest) => latest.toFixed(0));
+
+   
+
+  useEffect(() => {
+    // First counter: 0 → 70000
+    const unsubscribeDisplay = rounded1.onChange((v) => setDisplayCount(v));
+    const controls1 = animate(count1, 70000, {
+      duration: 1,
+      ease: "easeOut",
+    });
+
+    // Second counter: 0 → 400
+    const unsubscribeCustomer = rounded2.onChange((v) => setCustomerCount(v));
+    const controls2 = animate(count2, 400, {
+      duration: 2,
+      ease: "easeOut",
+    });
+
+    // Cleanup
+    return () => {
+      unsubscribeDisplay();
+      unsubscribeCustomer();
+      controls1.stop();
+      controls2.stop();
+    };
+  }, []);  
+
   return (
-    <div className=" w-full flex  flex-col items-center justify-center ">
-      <div className="text-center w-full">
+    <>    <div className=" w-full flex  flex-col items-center justify-center ">
+      <div>
+      <div>
+        <div className="flex p-32">
+        <motion.div 
+          initial={{ opacity: 0,x: 0}}   
+      whileInView={{ opacity: 1, x: -20}}           
+      transition={{ duration: 1, ease: "easeOut" }}
+      viewport={{ once: false, amount: 0.3 }} 
+className="w-10 h-10 bg-red-900 rounded-2xl rotate-12  "></motion.div>
+        <motion.div
+         initial={{ opacity: 0, y: 50}}   
+      whileInView={{ opacity: 1, y: 0 }}           
+      transition={{ duration: 1, ease: "easeOut" }}
+      viewport={{ once: false, amount: 0.3 }}
+
+         className="">welcome to <span className="text-7xl">MS Fin Creditors.</span>build your business.
+</motion.div>
+        <motion.div 
+         initial={{ opacity: 0,x: 0}}   
+      whileInView={{ opacity: 1, x: -20}}           
+      transition={{ duration: 1, ease: "easeOut" }}
+      viewport={{ once: false, amount: 0.3 }} 
+        className="size-50 bg-blue-900 rounded-4xl rotate-12 "></motion.div></div>
+        
+        <div >
        
-         <WavyBackground 
-         className="max-w-4xl mx-auto ">
-          <p className="text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center">
-            MSFIN Credit Pvt. Ltd
-          </p>
-          <p className="text-base md:text-lg mt-4 text-white font-normal inter-var text-center">
-            Leverage the power of canvas to create a beautiful hero section
-          </p>
-          <p className="text-base md:text-lg mt-4 text-white font-normal inter-var text-center">
-          Welcome to
-          </p>
-
-          <p className="text-base md:text-lg mt-4 text-white font-normal inter-var text-center">
-            Build your business with us — reliable, fast, and customer-focused
-            financial solutions.
-          </p>
-        
-        </WavyBackground>
-        
-
-        <div className="flex gap-4 justify-center">
-          <button className="bg-red-500 rounded-[5px] p-2">
-            Lets get Started
-          </button>
-        </div>
+          
+        <motion.div className="flex justify-between">
+          <div>
+          <div>Satsfied  user Globally</div>
+          <motion.div className="text-6xl">
+            {displayCount}k</motion.div>
       </div>
+       <div>
+         <div></div>
+         <div></div>
+         <div></div>
+      </div>
+       <div>
+          <div>Live Loan</div>
+          <motion.div className="text-6xl">
+            {customerCount}+</motion.div>
+      </div>
+             
+        </motion.div>
+        </div>
+        </div>
+       
+</div>
+
       <div className=" h-screen  bg-white">
         <div className="flex flex-col justify-center items-between text-center p-8 m-8 gap-16 w-full">
           <div className="flex justify-center">
@@ -137,7 +237,55 @@ const Home = () => {
       </div>
       <Services />
       {/* <Catcard /> */}
-    </div>
+     
+       <div className="w-full h-full">
+  <div>
+    <motion.div 
+     initial={{ opacity: 0, y: 50}}   
+      whileInView={{ opacity: 1, y: 0 }}           
+      transition={{ duration: 1, ease: "easeOut" }}
+      viewport={{ once: false, amount: 0.3 }}
+      className="text-4xl font-semibold text-center p-8">
+      5000+ Happy Customers
+    </motion.div>
+    <motion.div 
+      initial={{ opacity: 0, y: 50}}   
+      whileInView={{ opacity: 1, y: 0 }}           
+      transition={{ duration: 1, ease: "easeOut" }}
+      viewport={{ once: false, amount: 0.3 }}className="text-center text-lg text-gray-600">
+      Hear What Our Customers Say About Us.
+    </motion.div>
+  </div>
+
+ <div 
+ className=" columns-3 row-1 gap-6 p-8"
+  style={{
+    gridTemplateColumns: "repeat(auto-fit, minmax(full, 1fr))",
+  }}>
+  {testimonials.map((item, index) => (
+    <CustomerRev
+      key={index}
+      star={item.star}
+      name={item.name}
+      description={item.description}
+      designation={item.designation}
+    />
+    
+    
+  ))}
+</div>
+
+</div>
+
+<div>hii
+  
+</div>
+</div>
+
+      
+      </>
+
+    
   );
 };
 

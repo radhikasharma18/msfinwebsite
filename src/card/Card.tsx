@@ -1,8 +1,8 @@
-import React, { ReactNode } from "react";
+import React from "react";
 
 
 interface CardProps {
-  icon?: ReactNode;
+  icon?: React.ReactNode;
   title: string;
   description: string;
   

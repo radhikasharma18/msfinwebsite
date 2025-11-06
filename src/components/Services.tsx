@@ -38,20 +38,20 @@ Beyond our loan products, what truly sets us apart is our commitment to integrit
         < motion.div 
        initial={{ opacity: 0, y: 100 }}   
         whileInView={{ opacity: 1, y: 0 }}           
-      transition={{ duration: 2, ease: "easeOut" }}
+      transition={{ duration: 1, ease: "easeOut" }}
       viewport={{ once: false, amount: 0.3 }}  
       className="text-white text-5xl font-semibold text-center p-8 my-8">Our Loan Product</motion.div>
         
     <motion.div 
      initial={{ opacity: 0, y: 100 }}   
     whileInView={{ opacity: 1, y: 0 }}           
-      transition={{ duration: 2, ease: "easeOut" }}
+      transition={{ duration: 1, ease: "easeOut" }}
       viewport={{ once: false, amount: 0.3 }}   
     className="flex flex-wrap gap-8 justify-center p-16">
           <motion.div 
           initial={{ opacity: 0, x: -50 }}       
       whileInView={{ opacity: 1, x: 0 }}           
-      transition={{ duration: 2, ease: "easeOut" }}
+      transition={{ duration: 1, ease: "easeOut" }}
       viewport={{ once: false, amount: 0.3 }}  > 
       <ServicesCrad 
          icon= {< CiBank /> }
@@ -66,7 +66,7 @@ Beyond our loan products, what truly sets us apart is our commitment to integrit
          <motion.div
            initial={{ opacity: 0, x: 50 }}       
       whileInView={{ opacity: 1, x: 0 }}           
-      transition={{ duration: 2, ease: "easeOut" }}
+      transition={{ duration: 1, ease: "easeOut" }}
       viewport={{ once: false, amount: 0.3 }} > <ServicesCrad 
          icon={< IoCarOutline /> }
          title={"Used Vehicle Loans"} 
@@ -75,7 +75,7 @@ Beyond our loan products, what truly sets us apart is our commitment to integrit
           <motion.div 
           initial={{ opacity: 0, x: -50 }}       
       whileInView={{ opacity: 1, x: 0 }}           
-      transition={{ duration: 2, ease: "easeOut" }}
+      transition={{ duration: 1, ease: "easeOut" }}
       viewport={{ once: false, amount: 0.3 }}   > <ServicesCrad 
          icon={< CiBank /> }
          title={"Mortage Loans"} 
@@ -84,7 +84,7 @@ Beyond our loan products, what truly sets us apart is our commitment to integrit
          <motion.div
           initial={{ opacity: 0, x: 50}}   
       whileInView={{ opacity: 1, x: 0 }}           
-      transition={{ duration: 2, ease: "easeOut" }}
+      transition={{ duration: 1, ease: "easeOut" }}
       viewport={{ once: false, amount: 0.3 }} > <ServicesCrad 
          icon={<  PiMotorcycleLight /> }
          title={"Two Wheeler Loans"} 
